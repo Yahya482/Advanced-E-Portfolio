@@ -197,3 +197,15 @@ nav{
 PROJECTS
 
 */
+
+.row{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0px 12px;
+}
+
+.container{
+    padding: 50px 0px;
+    
+}
