@@ -6,20 +6,35 @@
 
 function contact(event){
     event.preventDefault()
-    // emailjs
-    // .sendForm(
-    //     'service_79ya0le',
-    //     'template_lzz2glr',
-    //     event.target,
-    //     'EYbfZeQtPfjqtvrc1'
-    // ).then(()=>{
-    //     console.log('this worked1')
-    // })
     const loading = document.querySelector('.modal__overlay--loading')
     const success = document.querySelector('.modal__overlay--success')
     loading.classList += " modal__overlay--visible"
-    setTimeout(() => {
+
+    emailjs
+    .sendForm(
+        'service_79ya0le',
+        'template_lzz2glr',
+        event.target,
+        'EYbfZeQtPfjqtvrc1'
+    ).then(() => {
         loading.classList.remove("modal__overlay--visible")
-        console.log('it worked 1')
-        }, 1000)
+        success.classList += " modal__overlay--visible"
+    }).catch(() => {
+        loading.classList.remove("modal__overlay--visible")
+        alert(
+            "The email service is temporarily unavailable. Please contact me directly on yahyahussain4@gmail.com"
+        )
+    })
+}
+
+let isModalOpen = false
+function toggleModal() {
+    
+    if (isModalOpen) {
+        isModalOpen = false
+        return document.body.classList.remove("modal--open")
+        
+    }
+    isModalOpen = true
+    document.body.classList += " modal--open"
 }
