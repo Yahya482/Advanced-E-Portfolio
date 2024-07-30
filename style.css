@@ -199,8 +199,12 @@ LANDING PAGE
     box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.28);
 }
 
-a{text-decoration: none;
+.mail__btn--link{text-decoration: none;
 color: white;}
+
+.dark-theme .mail__btn--link{
+    color: #242424;
+}
 
 .scroll{
     position: absolute;
